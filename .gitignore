@@ -1,5 +1,2 @@
-.idea/.gitignore
-.idea/modules.xml
-.idea/react-bootstrap-components.iml
-.idea/vcs.xml
+.idea
 /node_modules
