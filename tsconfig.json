@@ -19,10 +19,18 @@
     "removeComments": true,
     "jsx": "react",
     "baseUrl": "./",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "include": [
     "./src/**/*",
     "./public/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    "config"
   ]
 }

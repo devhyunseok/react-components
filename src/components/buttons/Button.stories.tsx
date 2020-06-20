@@ -10,31 +10,29 @@ export const button = () => {
   const buttonText = text('버튼명', '버튼');
 
   return (
-    <BootstrapDecorator>
-      <Container>
-        <Item>
-          <h5>Bootstrap Buttons</h5>
-          <Button variant={variant} size={buttonSize}>
-            {buttonText}
-          </Button>
-          <Button variant={Variants.Secondary} size={buttonSize}>
-            {buttonText}
-          </Button>
-          <Button variant={Variants.Danger} size={buttonSize}>
-            {buttonText}
-          </Button>
-          <Button variant={Variants.Warning} size={buttonSize}>
-            {buttonText}
-          </Button>
-          <Button variant={Variants.OutlinePrimary} size={buttonSize}>
-            {buttonText}
-          </Button>
-          <Button variant={Variants.OutlineSecondary} size={buttonSize}>
-            {buttonText}
-          </Button>
-        </Item>
-      </Container>
-    </BootstrapDecorator>
+    <Container>
+      <Item>
+        <h5>Bootstrap Buttons</h5>
+        <Button variant={variant} size={buttonSize}>
+          {buttonText}
+        </Button>
+        <Button variant={Variants.Secondary} size={buttonSize}>
+          {buttonText}
+        </Button>
+        <Button variant={Variants.Danger} size={buttonSize}>
+          {buttonText}
+        </Button>
+        <Button variant={Variants.Warning} size={buttonSize}>
+          {buttonText}
+        </Button>
+        <Button variant={Variants.OutlinePrimary} size={buttonSize}>
+          {buttonText}
+        </Button>
+        <Button variant={Variants.OutlineSecondary} size={buttonSize}>
+          {buttonText}
+        </Button>
+      </Item>
+    </Container>
   )
 };
 
@@ -54,7 +52,5 @@ const Item = styled.div`
 
 export default {
   title: 'Components|Button',
-  decorators: [withKnobs]
+  decorators: [(storyFn:any) => <BootstrapDecorator>{storyFn()}</BootstrapDecorator>, withKnobs],
 };
-
-
