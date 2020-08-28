@@ -1,8 +1,9 @@
 import React from 'react';
-import Button, {Variants} from "./Button";
-import {select, text, withKnobs} from "@storybook/addon-knobs";
-import BootstrapDecorator from "../bootstrap.decorator";
-import styled from "styled-components";
+import Button, {Variants} from './Button';
+import {select, text, withKnobs} from '@storybook/addon-knobs';
+import BootstrapDecorator from '../bootstrap.decorator';
+import styled from 'styled-components';
+import {withInfo} from '@storybook/addon-info';
 
 export const button = () => {
   const variant = select('버튼 색상', Variants, Variants.Primary);
@@ -10,47 +11,17 @@ export const button = () => {
   const buttonText = text('버튼명', '버튼');
 
   return (
-    <Container>
-      <Item>
-        <h5>Bootstrap Buttons</h5>
-        <Button variant={variant} size={buttonSize}>
-          {buttonText}
-        </Button>
-        <Button variant={Variants.Secondary} size={buttonSize}>
-          {buttonText}
-        </Button>
-        <Button variant={Variants.Danger} size={buttonSize}>
-          {buttonText}
-        </Button>
-        <Button variant={Variants.Warning} size={buttonSize}>
-          {buttonText}
-        </Button>
-        <Button variant={Variants.OutlinePrimary} size={buttonSize}>
-          {buttonText}
-        </Button>
-        <Button variant={Variants.OutlineSecondary} size={buttonSize}>
-          {buttonText}
-        </Button>
-      </Item>
-    </Container>
-  )
+    <Button variant={variant} size={buttonSize}>
+      {buttonText}
+    </Button>
+  );
 };
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 15px;
-`;
-
-const Item = styled.div`
-  flex: 1;
-  
-  button + button {
-    margin-left: 10px;
-  }
-`;
-
 export default {
-  title: 'Components|Button',
-  decorators: [(storyFn:any) => <BootstrapDecorator>{storyFn()}</BootstrapDecorator>, withKnobs],
+  title: 'Button',
+  description: 'simple',
+  component: Button,
+  decorators: [withKnobs, withInfo({
+    header: false
+  }), (storyFn: any) => <BootstrapDecorator>{storyFn()}</BootstrapDecorator>],
 };
