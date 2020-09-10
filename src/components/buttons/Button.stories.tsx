@@ -1,9 +1,8 @@
 import React from 'react';
-import Button, {Variants} from './Button';
-import {select, text, withKnobs} from '@storybook/addon-knobs';
+import Button, { Variants } from './Button';
+import { select, text, withKnobs } from '@storybook/addon-knobs';
 import BootstrapDecorator from '../bootstrap.decorator';
-import styled from 'styled-components';
-import {withInfo} from '@storybook/addon-info';
+import { withInfo } from '@storybook/addon-info';
 
 export const button = () => {
   const variant = select('버튼 색상', Variants, Variants.Primary);
@@ -23,5 +22,5 @@ export default {
   component: Button,
   decorators: [withKnobs, withInfo({
     header: false
-  }), (storyFn: any) => <BootstrapDecorator>{storyFn()}</BootstrapDecorator>],
+  }), (storyFn:any) => <BootstrapDecorator>{storyFn()}</BootstrapDecorator>],
 };
